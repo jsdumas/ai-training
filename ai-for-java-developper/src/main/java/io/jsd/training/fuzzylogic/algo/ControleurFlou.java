@@ -2,7 +2,7 @@ package io.jsd.training.fuzzylogic.algo;
 
 import java.util.ArrayList;
 
-// Classe gÃ©rant tout le systÃ¨me flou
+// Classe gérant tout le système flou
 public class ControleurFlou {
     protected String nom;
     protected ArrayList<VariableLinguistique> entrees;
@@ -18,7 +18,7 @@ public class ControleurFlou {
         probleme = new ArrayList();
     }
     
-    // Ajout d'une variable linguistique en entrÃ©e
+    // Ajout d'une variable linguistique en entrée
     public void AjouterVariableEntree(VariableLinguistique vl) {
         entrees.add(vl);
     }
@@ -29,28 +29,28 @@ public class ControleurFlou {
         sortie = vl;
     }
     
-    // Ajout d'une rÃ¨gle
+    // Ajout d'une règle
     public void AjouterRegle(RegleFloue regle) {
         regles.add(regle);
     }
     
-    // Ajout d'une rÃ¨gle (format textuel)
+    // Ajout d'une règle (format textuel)
     public void AjouterRegle(String regleStr) {
         RegleFloue regle = new RegleFloue(regleStr, this);
         regles.add(regle);
     }
     
-    // Ajout d'une valeur numÃ©rique en entrÃ©e
+    // Ajout d'une valeur numérique en entrée
     public void AjouterValeurNumerique(VariableLinguistique var, double valeur) {
         probleme.add(new ValeurNumerique(var,valeur));
     }
     
-    // Remise Ã  zÃ©ro du problÃ¨me (pour passer au cas suivant)
+    // Remise à  zéro du problème (pour passer au cas suivant)
     public void EffacerValeursNumeriques() {
         probleme.clear();
     }
     
-    // Retrouver une variable linguistique Ã  partir de son nom
+    // Retrouver une variable linguistique à  partir de son nom
     public VariableLinguistique VariableLinguistiqueParNom(String nom) {
         for (VariableLinguistique var : entrees) {
             if (var.nom.equalsIgnoreCase(nom)) {
@@ -63,19 +63,19 @@ public class ControleurFlou {
         return null;
     }
     
-    // RÃ©soud le problÃ¨me posÃ©
+    // Résoud le problème posé
     public double Resoudre() {
-        // Initialisation de l'ensemble flou rÃ©sultat
+        // Initialisation de l'ensemble flou résultat
         EnsembleFlou resultat = new EnsembleFlou(sortie.valeurMin, sortie.valeurMax);
         resultat.Ajouter(sortie.valeurMin, 0);
         resultat.Ajouter(sortie.valeurMax, 0);
         
-        // Application des rÃ¨gles et modification de l'ensemble flou rÃ©sultant
+        // Application des règles et modification de l'ensemble flou résultant
         for(RegleFloue regle : regles) {
             resultat = resultat.Ou(regle.Appliquer(probleme));
         }
         
-        // DÃ©fuzzification
+        // Défuzzification
         return resultat.Barycentre();
     }
 }

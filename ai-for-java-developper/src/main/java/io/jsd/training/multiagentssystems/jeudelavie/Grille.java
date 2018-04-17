@@ -3,7 +3,7 @@ package io.jsd.training.multiagentssystems.jeudelavie;
 import java.util.Observable;
 import java.util.Random;
 
-// Grille reprÃ©sentant l'environnement du jeu de la vie + les cellules
+// Grille représentant l'environnement du jeu de la vie + les cellules
 public class Grille extends Observable {
     protected int largeur;
     protected int hauteur;

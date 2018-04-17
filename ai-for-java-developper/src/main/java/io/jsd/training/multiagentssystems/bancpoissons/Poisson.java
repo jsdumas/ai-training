@@ -2,7 +2,7 @@ package io.jsd.training.multiagentssystems.bancpoissons;
 
 import java.util.ArrayList;
 
-// Un poisson, gÃ©rÃ© par un agent
+// Un poisson, géré par un agent
 public class Poisson extends Objet {
     // Constantes
     public static final double PAS = 3;
@@ -15,7 +15,7 @@ public class Poisson extends Objet {
     protected double vitesseX;
     protected double vitesseY;
     
-    // MÃ©thodes
+    // Méthodes
     public Poisson(double _x, double _y, double _dir) {
         posX = _x;
         posY = _y;
@@ -55,7 +55,7 @@ public class Poisson extends Objet {
     }
     
     protected boolean EviterMurs(double murXMin, double murYMin, double murXMax, double murYMax) {
-        // On s'arrÃªte aux murs
+        // On s'arràªte aux murs
         if (posX < murXMin) {
             posX = murXMin;
         }

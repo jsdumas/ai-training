@@ -1,6 +1,6 @@
 package io.jsd.training.neuralnetworks.algo;
 
-// Point utilisÃ© dans le rÃ©seau de neurones, avec plusieurs entrÃ©es et sorties
+// Point utilisé dans le réseau de neurones, avec plusieurs entrées et sorties
 public class PointND {
     public final double[] entrees;
     public final double[] sorties;

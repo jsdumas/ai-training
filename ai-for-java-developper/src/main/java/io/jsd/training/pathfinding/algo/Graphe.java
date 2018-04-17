@@ -2,19 +2,19 @@ package io.jsd.training.pathfinding.algo;
 
 import java.util.ArrayList;
 
-// Interface dÃ©finissant les graphes
+// Interface définissant les graphes
 public interface Graphe {
     // Informations sur le graphe
     Noeud NoeudDepart();
     Noeud NoeudSortie();
     
-    // RÃ©cupÃ©ration des noeuds et des arcs
+    // Récupération des noeuds et des arcs
     ArrayList<Noeud> ListeNoeuds();
     ArrayList<Noeud> ListeNoeudsSortants(Noeud source);
     ArrayList<Arc> ListeArcs();
     ArrayList<Arc> ListeArcsSortants(Noeud source);
     
-    // MÃ©thodes utilitaires
+    // Méthodes utilitaires
     int NombreNoeuds();
     double Cout(Noeud depart, Noeud arrivee);
     String ReconstruireChemin();

@@ -2,7 +2,7 @@ package io.jsd.training.multiagentssystems.triselectif;
 
 import io.jsd.training.multiagentssystems.bancpoissons.Objet;
 
-// DÃ©chats dans l'environnement
+// Déchats dans l'environnement
 public class Dechet extends Objet {
     protected final static double DECROISSANCE = 0.6;
     

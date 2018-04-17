@@ -5,10 +5,10 @@ import io.jsd.training.geneticalgorithm.algo.Individu;
 import io.jsd.training.geneticalgorithm.algo.Parametres;
 import java.util.ArrayList;
 
-// Un individu se dÃ©plaÃ§ant dans le labyinthe
+// Un individu se déplaà§ant dans le labyinthe
 public class LabIndividu extends Individu {
 
-    // Cnstructeur par dÃ©faut : individu alÃ©atoire
+    // Cnstructeur par défaut : individu aléatoire
     public LabIndividu() {
         genome = new ArrayList();
         for (int i = 0; i < Parametres.nbGenes; i++) {
@@ -42,16 +42,16 @@ public class LabIndividu extends Individu {
         Muter();
     }
     
-    // Mutation (suppression, ajout ou modification de gÃ¨nes)
+    // Mutation (suppression, ajout ou modification de gènes)
     @Override
     public void Muter() {
-        // Suppression d'un gÃ¨ne ?
+        // Suppression d'un gène ?
         if (Parametres.random.nextDouble() < Parametres.tauxSupprGene) {
             int index = Parametres.random.nextInt(genome.size());
             genome.remove(index);
         }
         
-        // Ajout d'un gÃ¨ne Ã  la fin ?
+        // Ajout d'un gène à  la fin ?
         if (Parametres.random.nextDouble() < Parametres.tauxAjoutGene) {
             genome.add(new LabGene());
         }

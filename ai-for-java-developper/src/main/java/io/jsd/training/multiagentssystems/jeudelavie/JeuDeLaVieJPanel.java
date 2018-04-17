@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JPanel;
 
-// Panel principal gÃ©rant le jeu de la vie (sa crÃ©ation + son lancement + mises Ã  jour)
+// Panel principal gérant le jeu de la vie (sa création + son lancement + mises à  jour)
 public class JeuDeLaVieJPanel extends JPanel implements Observer, MouseListener {
     Timer timer;
     boolean enCours = false;

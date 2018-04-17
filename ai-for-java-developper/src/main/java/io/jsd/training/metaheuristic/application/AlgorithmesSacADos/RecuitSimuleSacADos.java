@@ -4,7 +4,7 @@ import io.jsd.training.metaheuristic.algo.ISolution;
 import io.jsd.training.metaheuristic.algo.algorithmes.RecuitSimule;
 import io.jsd.training.metaheuristic.application.ProblemeSacADos;
 
-// Recuit simulÃ© pour le problÃ¨me du sac Ã  dos
+// Recuit simulé pour le problème du sac à  dos
 public class RecuitSimuleSacADos extends RecuitSimule {
     protected int nbIterationsSansAmelioration = 0;
     protected int nbIterations = 0;

@@ -4,7 +4,7 @@ import io.jsd.training.multiagentssystems.bancpoissons.Objet;
 import java.util.ArrayList;
 import java.util.Collections;
 
-// Agent qui va trier les dÃ©chets
+// Agent qui va trier les déchets
 public class AgentTri extends Objet {
     protected final static double PAS = 3;
     protected final static double PROB_CHGT_DIRECTION = 0.05;
@@ -52,7 +52,7 @@ public class AgentTri extends Objet {
     }
     
     protected void MiseAJourDirection(ArrayList<Dechet> dechets) {
-        // OÃ¹ aller ?
+        // Oà¹ aller ?
         ArrayList<Dechet> dansZone = new ArrayList();
         dansZone.addAll(dechets);
         dansZone.removeIf(d -> (Distance(d) > d.ZoneInfluence()));
@@ -67,7 +67,7 @@ public class AgentTri extends Objet {
         
         // Avons-nous un but ?
         if (but == null || occupe) {
-            // DÃ©placement alÃ©atoire
+            // Déplacement aléatoire
             if (Environnement.getInstance().generateur.nextDouble() < PROB_CHGT_DIRECTION) {
                 vitesseX = Environnement.getInstance().generateur.nextDouble() - 0.5;
                 vitesseY = Environnement.getInstance().generateur.nextDouble() - 0.5;

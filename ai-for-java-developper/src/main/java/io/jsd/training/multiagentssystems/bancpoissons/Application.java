@@ -2,17 +2,17 @@ package io.jsd.training.multiagentssystems.bancpoissons;
 
 import javax.swing.JFrame;
 
-// Lancement de la fenÃªtre et de l'application
+// Lancement de la fenàªtre et de l'application
 public class Application {
     public static void main(String[] args) {
-        // CrÃ©ation de la fenÃªtre
+        // Création de la fenàªtre
         JFrame fenetre = new JFrame();
         fenetre.setTitle("Banc de poissons");
         fenetre.setSize(600, 400);
         fenetre.setLocationRelativeTo(null);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fenetre.setResizable(false);
-        // CrÃ©ation du contenu
+        // Création du contenu
         OceanJPanel panel = new OceanJPanel();
         fenetre.setContentPane(panel);
         // Affichage

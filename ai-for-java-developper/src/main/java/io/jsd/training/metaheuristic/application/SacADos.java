@@ -48,7 +48,7 @@ public class SacADos implements IHM {
         algo.Resoudre(pb, this);
         System.out.println();
         
-        System.out.println("Recuit simulÃ©");
+        System.out.println("Recuit simulé");
         algo = new RecuitSimuleSacADos();
         algo.Resoudre(pb, this);
         System.out.println();

@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
-// Le probl√®me du sac √† dos √† r√©soudre (maximiser la valeur sans d√©passer le poids)
+// Le problËme du sac ‡† dos ‡† rÈsoudre (maximiser la valeur sans dÈpasser le poids)
 public class ProblemeSacADos implements IProbleme {
     protected ArrayList<Boite> boitesDispo = null;
     public double poidsMax;
     public static Random generateur = null;
     public final static int NB_VOISINS = 30;
     
-    // Probl√®me du livre (12 bo√Ætes)
+    // ProblËme du livre (12 bo‡Ætes)
     public ProblemeSacADos() {
         // Liste des boites
         boitesDispo = new ArrayList();
@@ -36,7 +36,7 @@ public class ProblemeSacADos implements IProbleme {
         }
     }
     
-    // Constructeur de probl√®mes al√©atoires
+    // Constructeur de problËmes alÈatoires
     public ProblemeSacADos(int nbBoites, double _poidsMax, double valeurMax) {
         boitesDispo = new ArrayList();
         poidsMax = _poidsMax;
@@ -59,17 +59,17 @@ public class ProblemeSacADos implements IProbleme {
         SolutionSacADos solution = new SolutionSacADos();
         ArrayList<Boite> boitesPossibles = Boites();
         double espaceDispo = poidsMax;
-        // On enl√®ve les trop lourdes
+        // On enlËve les trop lourdes
         EliminerTropLourdes(boitesPossibles, espaceDispo);
         while(espaceDispo > 0 && !boitesPossibles.isEmpty()) {
-            // Choix al√©atoire d'une boite
+            // Choix alÈatoire d'une boite
             int index = generateur.nextInt(boitesPossibles.size());
-            // Mise √† jour de la solution
+            // Mise ‡† jour de la solution
             Boite b = boitesPossibles.get(index);
             solution.contenu.add(b);
             boitesPossibles.remove(index);
             espaceDispo -= b.poids;
-            // Mise √† jour de la liste
+            // Mise ‡† jour de la liste
             EliminerTropLourdes(boitesPossibles, espaceDispo);
         }
         return solution;
@@ -105,9 +105,9 @@ public class ProblemeSacADos implements IProbleme {
     public ArrayList<ISolution> Voisinage(ISolution solutionCourante) {
         ArrayList<ISolution> voisinage = new ArrayList();
         for (int i = 0; i < NB_VOISINS; i++) {
-            // Cr√©ation d'un clone
+            // CrÈation d'un clone
             SolutionSacADos solution = new SolutionSacADos((SolutionSacADos) solutionCourante);
-            // On enl√®ve un √©l√©ment
+            // On enlËve un ÈlÈment
             int index = generateur.nextInt(solution.contenu.size());
             solution.contenu.remove(index);
             // Calcul du poids et des boites disponibles
@@ -117,14 +117,14 @@ public class ProblemeSacADos implements IProbleme {
             EliminerTropLourdes(boitesPossibles, espaceDispo);
             // On ajoute des boites
             while(espaceDispo > 0 && !boitesPossibles.isEmpty()) {
-                // Choix al√©atoire d'une boite
+                // Choix alÈatoire d'une boite
                 index = generateur.nextInt(boitesPossibles.size());
-                // Mise √† jour de la solution
+                // Mise ‡† jour de la solution
                 Boite b = boitesPossibles.get(index);
                 solution.contenu.add(b);
                 boitesPossibles.remove(index);
                 espaceDispo -= b.poids;
-                // Mise √† jour de la liste
+                // Mise ‡† jour de la liste
                 EliminerTropLourdes(boitesPossibles, espaceDispo);
             }
             voisinage.add(solution);

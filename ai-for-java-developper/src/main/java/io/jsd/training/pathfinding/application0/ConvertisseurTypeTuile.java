@@ -1,6 +1,6 @@
 package io.jsd.training.pathfinding.application0;
 
-// Classe utilitaire gÃ©rant les types de terrain
+// Classe utilitaire gérant les types de terrain
 class ConvertisseurTypeTuile {
     public static TypeTuile CharToType(char c) {
         switch (c) {

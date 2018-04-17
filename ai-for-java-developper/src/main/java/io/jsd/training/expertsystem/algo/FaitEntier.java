@@ -1,6 +1,6 @@
 package io.jsd.training.expertsystem.algo;
 
-// Classe pour les faits entiers (comme le nombre de cÃ´tÃ©s)
+// Classe pour les faits entiers (comme le nombre de cà´tés)
 class FaitEntier implements IFait {
 	
 	 // Nom du fait
@@ -9,7 +9,7 @@ class FaitEntier implements IFait {
     protected final int valeur;
  // Niveau (0 pour les faits en entrée)
     protected int niveau;
- // Question Ã  poser Ã  l'utilisateur si besoin
+ // Question à  poser à  l'utilisateur si besoin
     protected String question = "";
 	
 	// Constructeur

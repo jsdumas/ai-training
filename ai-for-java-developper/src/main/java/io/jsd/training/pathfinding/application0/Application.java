@@ -21,9 +21,9 @@ public class Application implements IHM {
         app.Lancer();
     }
 
-    // Lancement sur les deux problÃ¨mes
+    // Lancement sur les deux problèmes
     private void Lancer() {
-        // Cas 1Ã¨re carte
+        // Cas 1ère carte
         String carteStr = "..  XX   .\n" 
                       + "*.  *X  *.\n" 
                       + " .  XX ...\n" 
@@ -37,7 +37,7 @@ public class Application implements IHM {
         Carte carte1 = new Carte(carteStr, 0, 0, 9, 9);
         LancerAlgorithmes(carte1);
         
-        // Cas 2Ã¨me carte
+        // Cas 2ème carte
         carteStr = "...*     X .*    *  \n" 
                  + " *..*   *X .........\n"  
                  + "   .     =   *.*  *.\n" 
@@ -52,7 +52,7 @@ public class Application implements IHM {
         LancerAlgorithmes(carte2);
     }
     
-    // Lancement de tous les algorithmes Ã  la suite
+    // Lancement de tous les algorithmes à  la suite
     private void LancerAlgorithmes(Graphe graphe) {
         LancerAlgorithme("Profondeur", graphe);
         LancerAlgorithme("Largeur", graphe);
@@ -61,7 +61,7 @@ public class Application implements IHM {
         LancerAlgorithme("A*", graphe);
     }
     
-    // Lancement d'un algorithme d'aprÃ¨s son nom et affichage du temps
+    // Lancement d'un algorithme d'après son nom et affichage du temps
     private void LancerAlgorithme(String nom, Graphe graphe) {
         // Initialisation
         LocalDateTime debut;
@@ -69,7 +69,7 @@ public class Application implements IHM {
         Duration duree;
         Algorithme algo = null;
         
-        // CrÃ©ation de l'algorithme
+        // Création de l'algorithme
         switch(nom) {
             case "Profondeur" :
                 algo = new RechercheEnProfondeur(graphe, this);
@@ -88,16 +88,16 @@ public class Application implements IHM {
                 break;
         }
         
-        // RÃ©solution
+        // Résolution
         System.out.println("Algorithme : " + nom);
         debut = LocalDateTime.now();
         algo.Resoudre();
         fin = LocalDateTime.now();
         duree = Duration.between(debut, fin);
-        System.out.println("DurÃ©e (ms) : " + duree.toMillis() + "\n");
+        System.out.println("Durée (ms) : " + duree.toMillis() + "\n");
     }
     
-    // MÃ©thode venant de l'interface, pour l'affichage du rÃ©sultat
+    // Méthode venant de l'interface, pour l'affichage du résultat
     @Override
     public void AfficherResultat(String chemin, double distance) {
         System.out.println("Chemin (taille : " + distance + ") : " + chemin);

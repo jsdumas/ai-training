@@ -4,7 +4,7 @@ import io.jsd.training.metaheuristic.algo.ISolution;
 import java.util.ArrayList;
 import java.util.StringJoiner;
 
-// Une solution potentielle = un chargement possible du sac ├а dos
+// Une solution potentielle = un chargement possible du sac ра dos
 public class SolutionSacADos implements ISolution {
     public ArrayList<Boite> contenu;
     

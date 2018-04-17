@@ -2,22 +2,22 @@ package io.jsd.training.geneticalgorithm.algo;
 
 import java.util.Random;
 
-// Ensemble des paramÃ¨tres du systÃ¨me
+// Ensemble des paramètres du système
 public class Parametres {
-    // ParamÃ¨tres sur la population et les individus
+    // Paramètres sur la population et les individus
     public static int nbIndividus = 20;
     public static int nbGenes = 10;
     
-    // CritÃ¨res d'arrÃªt
+    // Critères d'arràªt
     public static int nbMaxGenerations = 50;
     public static double minFitness = 0.0;
     
-    // Taux des opÃ©rateurs
+    // Taux des opérateurs
     public static double tauxMutation = 0.1;
     public static double tauxAjoutGene = 0.2;
     public static double tauxSupprGene = 0.1;
     public static double tauxCrossover = 0.6;
     
-    // GÃ©nÃ©rateur alÃ©atoire
+    // Générateur aléatoire
     public static Random random = new Random();
 }

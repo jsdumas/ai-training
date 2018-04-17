@@ -1,6 +1,6 @@
 package io.jsd.training.fuzzylogic.algo;
 
-// Classe permettant d'associer une variable linguistique et sa valeur numÃ©rique
+// Classe permettant d'associer une variable linguistique et sa valeur numérique
 public class ValeurNumerique {
     protected VariableLinguistique vl;
     protected double valeur;

@@ -1,6 +1,6 @@
 package io.jsd.training.fuzzylogic.algo;
 
-// Ensemble flou particulier : 1/2 trapÃ¨ze droite
+// Ensemble flou particulier : 1/2 trapèze droite
 // Forme :
 // *         __________
 // *        / 

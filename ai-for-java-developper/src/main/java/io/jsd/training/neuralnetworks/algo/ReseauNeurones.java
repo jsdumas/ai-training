@@ -1,6 +1,6 @@
 package io.jsd.training.neuralnetworks.algo;
 
-// Gestion du rÃ©seau de neurones
+// Gestion du réseau de neurones
 public class ReseauNeurones {
     protected Neurone[] neuronesCaches;
     protected Neurone[] neuronesSortie;
@@ -25,7 +25,7 @@ public class ReseauNeurones {
     }
     
     protected double[] Evaluer(PointND point) {
-        // On efface la sortie prÃ©cÃ©dente
+        // On efface la sortie précédente
         for (Neurone n : neuronesCaches) {
             n.Effacer();
         }
@@ -33,7 +33,7 @@ public class ReseauNeurones {
             n.Effacer();
         }
         
-        // Calcul des sorties des neurones cachÃ©s
+        // Calcul des sorties des neurones cachés
         double[] sortiesCachees = new double[nbCaches];
         for (int i = 0; i < nbCaches; i++) {
             sortiesCachees[i] = neuronesCaches[i].Evaluer(point);
@@ -57,7 +57,7 @@ public class ReseauNeurones {
             deltasSortie[i] = sortieObtenue * (1 - sortieObtenue) * (sortieAttendue - sortieObtenue);
         }
         
-        // Calcul des deltas pour les neurones cachÃ©s
+        // Calcul des deltas pour les neurones cachés
         double[] deltasCaches = new double[nbCaches];
         for (int i = 0; i < nbCaches; i++) {
             double sortieObtenue = neuronesCaches[i].sortie;
@@ -80,7 +80,7 @@ public class ReseauNeurones {
             neuroneSortie.setPoids(nbCaches, valeur);
         }
         
-        // Ajustement des poids des neurones cachÃ©s
+        // Ajustement des poids des neurones cachés
         for (int i = 0; i < nbCaches; i++) {
             Neurone neuroneCache = neuronesCaches[i];
             for (int j = 0; j < nbEntrees; j++) {

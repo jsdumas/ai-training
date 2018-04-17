@@ -3,7 +3,7 @@ package io.jsd.training.geneticalgorithm.algo.PVC;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-// ProblÃ¨me du Voyageur de Commerce
+// Problème du Voyageur de Commerce
 public class PVC {
     // Attributs : villes et distances
     static ArrayList<String> villes;
@@ -38,7 +38,7 @@ public class PVC {
         return villesIndex;
     }
     
-    // Renvoie le nom d'une ville donnÃ©e
+    // Renvoie le nom d'une ville donnée
     protected static String getVille(int villeIndex) {
         return villes.get(villeIndex);
     }

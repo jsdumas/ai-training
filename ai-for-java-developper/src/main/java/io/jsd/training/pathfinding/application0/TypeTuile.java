@@ -1,4 +1,4 @@
 package io.jsd.training.pathfinding.application0;
 
-// EnumÃ©ration sur les types de terrain
+// Enumération sur les types de terrain
 public enum TypeTuile {Herbe, Arbre, Eau, Pont, Chemin};

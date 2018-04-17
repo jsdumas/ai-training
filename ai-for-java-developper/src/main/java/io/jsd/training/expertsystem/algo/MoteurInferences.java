@@ -2,65 +2,65 @@ package io.jsd.training.expertsystem.algo;
 
 import java.util.ArrayList;
 
-// Moteur d'inf√©rences du syst√®me expert, √† cha√Ænage avant
+// Moteur d'infÈrences du systËme expert, ‡† cha‡Ænage avant
 public class MoteurInferences {
-    private BaseDeFaits bdf;
-    private BaseDeRegles bdr;
+	
+    private BaseDeFaits baseDeFaits;
+    private BaseDeRegles baseDeRegles;
     private IHM ihm;
-    
     private int niveauMaxRegle;
     
     // Constructeur
-    public MoteurInferences(IHM _ihm) {
-        ihm = _ihm;
-        bdf = new BaseDeFaits();
-        bdr = new BaseDeRegles();
+    public MoteurInferences(IHM ihm) {
+        this.ihm = ihm;
+        this.baseDeFaits = new BaseDeFaits();
+        this.baseDeRegles = new BaseDeRegles();
     }
     
-    // Demande une valeur enti√®re √† l'ihm
+    // Demande une valeur entiËre ‡† l'ihm
     int DemanderValeurEntiere(String question) {
         return ihm.demanderValeurEntiere(question);
     }
     
-    // Demande une valeur bool√©enne √† l'ihm
+    // Demande une valeur boolÈenne ‡† l'ihm
     boolean DemanderValeurBooleenne(String question) {
         return ihm.demanderValeurBooleenne(question);
     }
     
-    // Indique si une r√®gle pass√©e en param√®tre est applicable. 
+    // Indique si une rËgle passÈe en paramËtre est applicable. 
     // Si oui, renvoie son niveau, sinon renvoie -1
     int EstApplicable(Regle _r) {
         int niveauMax = -1;
-        // On v√©rifie la v√©racit√© de chaque pr√©misse
+        // On vÈrifie la vÈracitÈ de chaque prÈmisse
         for (IFait f : _r.getPremisses()) {
-            IFait faitTrouve = bdf.Chercher(f.getNom());
+            IFait faitTrouve = baseDeFaits.Chercher(f.getNom());
             if (faitTrouve == null) {
                 // Ce fait n'existe pas en base de faits
                 if (f.getQuestion() != null) {
                     // On le demande (et on l'ajoute)
                     faitTrouve = FaitFactory.Fait(f, this);
-                    bdf.AjouterFait(faitTrouve);
+                    baseDeFaits.ajouterFait(faitTrouve);
                 }
                 else {
-                    // La r√®gle ne peut pas s'appliquer
+                    // La rËgle ne peut pas s'appliquer
                     return -1;
                 }
             }
             
-            // Le fait existe en base (avant ou cr√©√©), mais avec la bonne valeur ?
+            // Le fait existe en base (avant ou crÈÈ), mais avec la bonne valeur ?
             if (!faitTrouve.getValeur().equals(f.getValeur())) {
                 // Ca ne correspond pas
                 return -1;
             }
             else {
-                // Ca correspond, on met √† jour le niveau
+                // Ca correspond, on met ‡† jour le niveau
                 niveauMax = Math.max(niveauMax, faitTrouve.getNiveau());
             }
         }
         return niveauMax;
     }
     
-    // Renvoie la premi√®e r√®gle applicable de la base pass√©e en param√®tre
+    // Renvoie la premiËe rËgle applicable de la base passÈe en paramËtre
     // S'il y en a une, remplit aussi l'attribut de la classe (niveauMaxRegle)
     // sinon renvoie null
     Regle TrouverRegle(BaseDeRegles bdrLocale) {
@@ -74,41 +74,41 @@ public class MoteurInferences {
         return null;
     }
     
-    // Algorithme principal permettant de r√©soudre un cas donn√©
-    public void Resoudre() {
-        // On copie toutes les r√®gles
+    // Algorithme principal permettant de rÈsoudre un cas donnÈ
+    public void resoudre() {
+        // On copie toutes les rËgles
         BaseDeRegles bdrLocale = new BaseDeRegles();
-        bdrLocale.setRegles(bdr.getRegles());
+        bdrLocale.setRegles(this.baseDeRegles.getRegles());
         
         // On vide la base de faits
-        bdf.Vider();
+        baseDeFaits.vider();
         
-        // Tant qu'il existe des r√®gles √† appliquer
+        // Tant qu'il existe des rËgles ‡† appliquer
         Regle r = TrouverRegle(bdrLocale);
         while(r!=null) {
-            // Appliquer la r√®gle
+            // Appliquer la rËgle
             IFait nouveauFait = r.conclusion;
             nouveauFait.setNiveau(niveauMaxRegle + 1);
-            bdf.AjouterFait(nouveauFait);
-            // Enlever la r√®gle des possibles
+            baseDeFaits.ajouterFait(nouveauFait);
+            // Enlever la rËgle des possibles
             bdrLocale.Effacer(r);
-            // Chercher la prochaine r√®gle applicable
+            // Chercher la prochaine rËgle applicable
             r = TrouverRegle(bdrLocale);
         }
         
-        // Affichage des r√©sultats
-        ihm.afficherFaits(bdf.getFaits());
+        // Affichage des rÈsultats
+        ihm.afficherFaits(baseDeFaits.getFaits());
     }
     
-    // Ajoute une r√®gle √† la base √† partir de sa chaine
+    // Ajoute une rËgle ‡† la base ‡† partir de sa chaine
     // Sous la forme :
     // Nom : IF premisses THEN conclusion
-    public void AjouterRegle(String str) {
-        // S√©paration nom:r√®gle
+    public void ajouterRegle(String str) {
+        // SÈparation nom:rËgle
         String[] nomRegle = str.split(":");
         if (nomRegle.length == 2) {
             String nom = nomRegle[0].trim();
-            // S√©paration premisses THEN conclusion
+            // SÈparation premisses THEN conclusion
             String regle = nomRegle[1].trim();
             regle = regle.replaceFirst("^" + "IF", "");
             String[] premissesConclusion = regle.split("THEN");
@@ -125,8 +125,8 @@ public class MoteurInferences {
                 String conclusionStr = premissesConclusion[1].trim();
                 IFait conclusion = FaitFactory.Fait(conclusionStr);
                 
-                // Cr√©ation de la r√®gle et ajout √† la base
-                bdr.AjouterRegle(new Regle(nom, premisses, conclusion));
+                // CrÈation de la rËgle et ajout ‡† la base
+                baseDeRegles.AjouterRegle(new Regle(nom, premisses, conclusion));
             }
         }
     }

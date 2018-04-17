@@ -3,7 +3,7 @@ package io.jsd.training.neuralnetworks.algo;
 import java.util.ArrayList;
 import java.util.Random;
 
-// Ensemble des points utilisÃ©s dans l'algorithme
+// Ensemble des points utilisés dans l'algorithme
 public class CollectionPoints {
     protected PointND[] ptsApprentissage;
     protected PointND[] ptsGeneralisation;
@@ -24,7 +24,7 @@ public class CollectionPoints {
             points.add(new PointND(_contenu[i], _nbSorties));
         }
         
-        // CrÃ©ation des points d'apprentissage
+        // Création des points d'apprentissage
         int nbPtsApprentissage = (int) (nbLignes * _ratioApprentissage);
         ptsApprentissage = new PointND[nbPtsApprentissage];
         Random generateur = new Random();
@@ -34,7 +34,7 @@ public class CollectionPoints {
             points.remove(index);
         }
         
-        // CrÃ©ation des points de gÃ©nÃ©ralisation
+        // Création des points de généralisation
         ptsGeneralisation = (PointND[]) points.toArray(new PointND[points.size()]);
     }
 }

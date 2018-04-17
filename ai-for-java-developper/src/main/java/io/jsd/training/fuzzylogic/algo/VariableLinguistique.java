@@ -2,7 +2,7 @@ package io.jsd.training.fuzzylogic.algo;
 
 import java.util.ArrayList;
 
-// Classe reprÃ©sentant une variable linguistique
+// Classe représentant une variable linguistique
 public class VariableLinguistique {
     protected String nom;
     protected ArrayList<ValeurLinguistique> valeurs;

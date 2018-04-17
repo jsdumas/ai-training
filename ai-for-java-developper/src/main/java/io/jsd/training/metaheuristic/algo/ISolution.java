@@ -1,6 +1,6 @@
 package io.jsd.training.metaheuristic.algo;
 
-// Solution gÃ©nÃ©rique au problÃ¨me
+// Solution générique au problème
 public interface ISolution {
     double getValeur();
 }

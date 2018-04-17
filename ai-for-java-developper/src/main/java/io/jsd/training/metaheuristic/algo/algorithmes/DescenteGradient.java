@@ -6,7 +6,7 @@ import io.jsd.training.metaheuristic.algo.IProbleme;
 import io.jsd.training.metaheuristic.algo.ISolution;
 import java.util.ArrayList;
 
-// Descente de gradient : on cherche le meilleur voisin jusqu'Ã  ce qu'il n'y ait plus d'amÃ©liorations
+// Descente de gradient : on cherche le meilleur voisin jusqu'à  ce qu'il n'y ait plus d'améliorations
 public abstract class DescenteGradient extends Algorithme {
     protected ISolution solutionCourante;
     

@@ -5,7 +5,7 @@ import io.jsd.training.geneticalgorithm.algo.PVC.PVCIndividu;
 import io.jsd.training.geneticalgorithm.algo.labyrinthe.LabIndividu;
 import io.jsd.training.geneticalgorithm.algo.labyrinthe.Labyrinthe;
 
-// Fabrique d'individus adaptÃ©s aux problÃ¨me (classe singleton)
+// Fabrique d'individus adaptés aux problème (classe singleton)
 class FabriqueIndividus {
     private static FabriqueIndividus instance;
     

@@ -3,7 +3,7 @@ package io.jsd.training.geneticalgorithm.algo.labyrinthe;
 import io.jsd.training.geneticalgorithm.algo.IGene;
 import java.util.ArrayList;
 
-// ReprÃ©sente un labyrinthe avec les passages possibles, l'entrÃ©e et la sortie
+// Représente un labyrinthe avec les passages possibles, l'entrée et la sortie
 public class Labyrinthe {
     // Informations sur le labyrinthe
     private static ArrayList<Case[]> chemins;
@@ -40,7 +40,7 @@ public class Labyrinthe {
     public static void Init(String s) {
         chemins = new ArrayList();
         
-        // On sÃ©pare puis traite chaque ligne
+        // On sépare puis traite chaque ligne
         String[] lignes = s.split("\n");
         int nbLignes = 0;
         for (String ligne : lignes) {
@@ -48,7 +48,7 @@ public class Labyrinthe {
                 // Nombre impair, donc ligne de couloir
                 int index = ligne.indexOf("E");
                 if (index != -1) {
-                    // On a une entrÃ©e dans ce couloir
+                    // On a une entrée dans ce couloir
                     if (index == ligne.length() - 1) {
                         index --;
                     }
@@ -62,7 +62,7 @@ public class Labyrinthe {
                     }
                     sortie = new Case(nbLignes/2, index/3);
                 }
-                // On parcourt le couloir pour crÃ©er les chemins horizontaux
+                // On parcourt le couloir pour créer les chemins horizontaux
                 for (int colonne = 0; colonne < ligne.length() / 3; colonne++) {
                     String caseStr = ligne.substring(colonne*3, colonne*3 + 3);
                     if (!caseStr.contains("|") && !caseStr.contains("E") && !caseStr.contains("S")) {
@@ -87,7 +87,7 @@ public class Labyrinthe {
         }
     }
     
-    // Indique si un dÃ©placement entre deux cases est possible
+    // Indique si un déplacement entre deux cases est possible
     private static boolean estPossible(Case pos1, Case pos2) {
         for (Case[] chemin : chemins) {
             if ((chemin[0].equals(pos1) && chemin[1].equals(pos2)) || ((chemin[0].equals(pos2) && chemin[1].equals(pos1)))) {
@@ -108,7 +108,7 @@ public class Labyrinthe {
         return nbChemins > 2;
     }
     
-    // Regarde si le dÃ©placement est possible
+    // Regarde si le déplacement est possible
     static void Deplacer(Case depart, int deplI, int deplJ) {
         boolean finDeplacement = false;
         while(estPossible(depart, new Case(depart.i + deplI, depart.j + deplJ)) && !finDeplacement) {
@@ -119,7 +119,7 @@ public class Labyrinthe {
         finDeplacement = false;
     }
     
-    // DÃ©place un individu dans le labyrinthe pour l'Ã©valuer
+    // Déplace un individu dans le labyrinthe pour l'évaluer
     static double Evaluer(ArrayList<IGene> genome) { 
         Case caseEnCours = new Case(entree.i, entree.j);
         boolean finDeplacement = false;

@@ -2,12 +2,12 @@ package io.jsd.training.metaheuristic.algo;
 
 import java.util.ArrayList;
 
-// Un problÃ¨me gÃ©nÃ©rique
+// Un problème générique
 public interface IProbleme {
     // Renvoie le voisinage d'une solution
     ArrayList<ISolution> Voisinage(ISolution solutionCourante);
     
-    // CrÃ©Ã© une solution alÃ©atoire
+    // Créé une solution aléatoire
     ISolution SolutionAleatoire();
     
     // Renvoie la meilleure solution d'un ensemble

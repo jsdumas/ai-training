@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JPanel;
 
-// Panel contenant la simulation de tri sÃ©lectif
+// Panel contenant la simulation de tri sélectif
 public class TriJPanel extends JPanel implements Observer, MouseListener {
     Timer timer;
     boolean enCours = false;
@@ -31,7 +31,7 @@ public class TriJPanel extends JPanel implements Observer, MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (enCours) {
-            // On arrÃªte le timer
+            // On arràªte le timer
             timer.cancel();
             timer = null;
             enCours = false;
@@ -95,7 +95,7 @@ public class TriJPanel extends JPanel implements Observer, MouseListener {
                 couleur = Color.BLUE;
         }
         g.setColor(couleur);
-        // Base : carrÃ©
+        // Base : carré
         g.fillRect((int) d.posX - 1, (int) d.posY - 1, 3, 3);
         // Zone d'influence (ronde)
         couleur = new Color(couleur.getRed(), couleur.getGreen(), couleur.getBlue(), 50);

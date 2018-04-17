@@ -6,7 +6,7 @@ import io.jsd.training.metaheuristic.algo.IProbleme;
 import io.jsd.training.metaheuristic.algo.ISolution;
 import java.util.ArrayList;
 
-// Algorithme par essaim : plusieurs solutions vont se dÃ©placer dans l'espace de recherche
+// Algorithme par essaim : plusieurs solutions vont se déplacer dans l'espace de recherche
 public abstract class EssaimParticulaire extends Algorithme {
     protected ArrayList<ISolution> solutions;
     protected ISolution meilleureSolution;

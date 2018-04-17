@@ -2,41 +2,42 @@ package io.jsd.training.expertsystem.algo;
 
 import java.util.ArrayList;
 
-// Classe gÃ©rant la base de rÃ¨gles
+// Classe gérant la base de règles
 class BaseDeRegles {
-    // Liste des rÃ¨gles
+	
+    // Liste des règles
     protected ArrayList<Regle> regles;
+    
+    // Constructeur
+    public BaseDeRegles() { 
+        this.regles = new ArrayList(); 
+    } 
+    
     public ArrayList<Regle> getRegles() {
        return regles;
     }
-    public void setRegles(ArrayList<Regle> _regles) {
-        // On copie les rÃ¨gles et on les ajoute
-        for (Regle r : _regles) {
-            Regle copie = new Regle(r.nom, r.premisses, r.conclusion);
+    
+    public void setRegles(ArrayList<Regle> regles) {
+        // On copie les règles et on les ajoute
+        for (Regle regle : regles) {
+            Regle copie = new Regle(regle.getNom(), regle.getPremisses(), regle.getConclusion());
             regles.add(copie);
         }
     }
    
-    // Constructeur
-    public BaseDeRegles() { 
-        regles = new ArrayList(); 
-    } 
-
-    // Efface les rÃ¨gles
-    public void ClearBase() 
-    { 
+    // Efface les règles
+    public void ClearBase()  { 
         regles.clear(); 
     } 
   
-    // Ajouter une rÃ¨gle Ã  la base
-    public void AjouterRegle(Regle r) 
-    { 
-        regles.add(r); 
+    // Ajouter une règle à  la base
+    public void AjouterRegle(Regle regle)   { 
+        regles.add(regle); 
     } 
   
-    // EnlÃ¨ve une rÃ¨gle
-    public void Effacer(Regle r) 
+    // Enlève une règle
+    public void Effacer(Regle regle) 
     { 
-        regles.remove(r); 
+        regles.remove(regle); 
     }
 }

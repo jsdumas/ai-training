@@ -3,7 +3,7 @@ package io.jsd.training.geneticalgorithm.algo.labyrinthe;
 import io.jsd.training.geneticalgorithm.algo.IGene;
 import io.jsd.training.geneticalgorithm.algo.Parametres;
 
-// Les gÃ¨nes pour le labyrinthe
+// Les gènes pour le labyrinthe
 public class LabGene implements IGene {
     public Labyrinthe.Direction direction;
     

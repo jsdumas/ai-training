@@ -6,7 +6,7 @@ import io.jsd.training.metaheuristic.algo.IProbleme;
 import io.jsd.training.metaheuristic.algo.ISolution;
 import java.util.ArrayList;
 
-// Recherche tabou : on se dÃ©place sur le meilleur voisin non prÃ©sent dans la liste taboue
+// Recherche tabou : on se déplace sur le meilleur voisin non présent dans la liste taboue
 public abstract class RechercheTabou extends Algorithme {
     protected ISolution solutionCourante;
     protected ISolution meilleureSolution;

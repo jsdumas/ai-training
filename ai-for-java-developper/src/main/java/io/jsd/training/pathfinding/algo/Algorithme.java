@@ -1,7 +1,7 @@
 package io.jsd.training.pathfinding.algo;
 
-// Classe gÃ©nÃ©rique reprÃ©sentant un algorithme de recherche de chemins
-// Tous les algorithmes en hÃ©ritent
+// Classe générique représentant un algorithme de recherche de chemins
+// Tous les algorithmes en héritent
 public abstract class Algorithme {
     protected Graphe graphe;
     protected IHM ihm;
@@ -18,7 +18,7 @@ public abstract class Algorithme {
         // Lancement de l'algorithme
         Run();
         
-        // Affichage du rÃ©sultat
+        // Affichage du résultat
         ihm.AfficherResultat(graphe.ReconstruireChemin(), graphe.NoeudSortie().distanceDuDepart);
     }
     

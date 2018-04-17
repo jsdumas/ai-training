@@ -1,6 +1,6 @@
 package io.jsd.training.geneticalgorithm.algo;
 
-// Interface gÃ©nÃ©rique
+// Interface générique
 public interface IHM {
     void AfficherMeilleurIndividu(Individu ind, int generation);
 }

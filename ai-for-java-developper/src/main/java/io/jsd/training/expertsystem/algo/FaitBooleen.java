@@ -1,15 +1,15 @@
 package io.jsd.training.expertsystem.algo;
 
-// Classe pour les faits boolÃ©ens (comme le fait d'Ãªtre ou non un triangle)
+// Classe pour les faits booléens (comme le fait d'àªtre ou non un triangle)
 class FaitBooleen implements IFait {
 
     // Nom du fait
     protected final String nom;
-    // Valeur boolÃ©enne du fait
+    // Valeur booléenne du fait
     protected final boolean valeur;
-    // Niveau (0 pour les faits en entrÃ©e)
+    // Niveau (0 pour les faits en entrée)
     protected int niveau;
-    // Question Ã  poser Ã  l'utilisateur si besoin
+    // Question à  poser à  l'utilisateur si besoin
     protected String question;
     
     
@@ -42,13 +42,10 @@ class FaitBooleen implements IFait {
         return question;
     }
 
-    
-
-    // MÃ©thode toString (pour l'affichage)
+    // Méthode toString (pour l'affichage)
     // de la forme Fait(niveau) ou !Fait(niveau)
     @Override
-    public String toString() 
-    { 
+    public String toString()     { 
         String res = ""; 
         if (!valeur) 
         { 

@@ -1,6 +1,6 @@
 package io.jsd.training.metaheuristic.application;
 
-// Une boite dans le problÃ¨me du sac Ã  dos
+// Une boite dans le problème du sac à  dos
 public class Boite {
     public double poids;
     public double valeur;

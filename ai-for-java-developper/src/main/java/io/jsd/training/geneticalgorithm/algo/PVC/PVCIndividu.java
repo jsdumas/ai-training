@@ -5,10 +5,10 @@ import io.jsd.training.geneticalgorithm.algo.Individu;
 import io.jsd.training.geneticalgorithm.algo.Parametres;
 import java.util.ArrayList;
 
-// Individu du problÃ¨me du voyageur de commerce
+// Individu du problème du voyageur de commerce
 public class PVCIndividu extends Individu {
 
-    // Constructeur par dÃ©faut : choix alÃ©atoire du parcours
+    // Constructeur par défaut : choix aléatoire du parcours
     public PVCIndividu() {
         genome = new ArrayList();
         ArrayList<Integer> indexDispo = PVC.getVillesIndex();
@@ -19,7 +19,7 @@ public class PVCIndividu extends Individu {
         }
     }
     
-    // Mutation : on va dÃ©placer un gÃ¨ne
+    // Mutation : on va déplacer un gène
     @Override
     public void Muter() {
         if (Parametres.random.nextDouble() < Parametres.tauxMutation) {

@@ -5,7 +5,7 @@ import io.jsd.training.metaheuristic.algo.algorithmes.RechercheTabou;
 import io.jsd.training.metaheuristic.application.SolutionSacADos;
 import java.util.ArrayList;
 
-// Recherche tabou pour le problÃ¨me du sac Ã  dos
+// Recherche tabou pour le problème du sac à  dos
 public class RechercheTabouSacADos extends RechercheTabou {
     protected int nbIterationsSansAmelioration = 0;
     protected int nbIterations = 0;

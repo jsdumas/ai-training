@@ -1,6 +1,6 @@
 package io.jsd.training.neuralnetworks.algo;
 
-// Classe gÃ©rant le rÃ©seau et l'apprentissage
+// Classe gérant le réseau et l'apprentissage
 public class Systeme {
     protected CollectionPoints donnees;
     protected ReseauNeurones reseau;
@@ -38,7 +38,7 @@ public class Systeme {
         int nbSurapprentissage = 0;
         
         while (nbIterations < nbIterationsMax && erreurTotale > erreurMax && nbSurapprentissage < 3) {
-            // Passage Ã  l'itÃ©ration suivante
+            // Passage à  l'itération suivante
             ancienneErreur = erreurTotale;
             erreurTotale = 0;
             ancienneErreurGeneralisation = erreurGeneralisationTotale;
@@ -54,7 +54,7 @@ public class Systeme {
                 reseau.AjusterPoids(point, tauxApprentissage);
             }
             
-            // GÃ©nÃ©ralisation
+            // Généralisation
             for (PointND point : donnees.getPtsGeneralisation()) {
                 double[] sorties = reseau.Evaluer(point);
                 for (int nb = 0; nb < sorties.length; nb++) {
@@ -74,7 +74,7 @@ public class Systeme {
                 tauxApprentissage = tauxApprentissage / 2.0;
             }
             
-            // Affichage et incrÃ©ment
+            // Affichage et incrément
             ihm.AfficherMessage("Iteration nÂ°" + nbIterations + " - Erreur totale : " + erreurTotale + " - Generalisation : " + erreurGeneralisationTotale + " - Taux : " + tauxApprentissage + " - Moyenne : " + Math.sqrt(erreurTotale / donnees.ptsApprentissage.length));
             nbIterations++;
         }

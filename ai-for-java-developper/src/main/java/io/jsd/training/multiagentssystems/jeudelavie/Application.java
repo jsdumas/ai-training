@@ -5,14 +5,14 @@ import javax.swing.JFrame;
 // Fenetre principale de l'application (et lancement)
 public class Application {
     public static void main(String[] args) {
-        // CrÃ©ation de la fenÃªtre
+        // Création de la fenàªtre
         JFrame fenetre = new JFrame();
         fenetre.setTitle("Jeu de la vie");
         fenetre.setSize(600, 400);
         fenetre.setLocationRelativeTo(null);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fenetre.setResizable(false);
-        // CrÃ©ation du contenu
+        // Création du contenu
         JeuDeLaVieJPanel panel = new JeuDeLaVieJPanel();
         fenetre.setContentPane(panel);
         // Affichage

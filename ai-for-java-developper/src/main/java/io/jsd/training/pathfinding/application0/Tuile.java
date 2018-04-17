@@ -2,7 +2,7 @@ package io.jsd.training.pathfinding.application0;
 
 import io.jsd.training.pathfinding.algo.Noeud;
 
-// Classe repr√©sentant chaque case de notre carte
+// Classe reprÈsentant chaque case de notre carte
 public class Tuile extends Noeud {
     protected TypeTuile type;
     protected int ligne;
@@ -20,7 +20,7 @@ public class Tuile extends Noeud {
         return (type.equals(TypeTuile.Chemin) || type.equals(TypeTuile.Herbe) || type.equals(TypeTuile.Pont));
     }
     
-    // Renvoie le co√ªt de la case
+    // Renvoie le co‡ªt de la case
     double Cout() {
         switch (type) {
             case Chemin :

@@ -2,7 +2,7 @@ package io.jsd.training.neuralnetworks.algo;
 
 import java.util.Random;
 
-// Neurone formel de notre rÃ©seau
+// Neurone formel de notre réseau
 public class Neurone {
     protected double[] poids;
     protected double sortie;

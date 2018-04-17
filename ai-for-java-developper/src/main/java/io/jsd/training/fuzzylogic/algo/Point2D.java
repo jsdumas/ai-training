@@ -1,9 +1,9 @@
 package io.jsd.training.fuzzylogic.algo;
 
-// Classe gÃ©rant les points des fonctions d'appartenance
+// Classe gérant les points des fonctions d'appartenance
 public class Point2D implements Comparable {
 
-    // CoordonnÃ©es
+    // Coordonnées
     public double x;
     public double y;
     

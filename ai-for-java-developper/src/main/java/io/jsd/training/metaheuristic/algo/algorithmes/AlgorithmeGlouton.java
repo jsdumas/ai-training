@@ -4,7 +4,7 @@ import io.jsd.training.metaheuristic.algo.Algorithme;
 import io.jsd.training.metaheuristic.algo.IHM;
 import io.jsd.training.metaheuristic.algo.IProbleme;
 
-// RÃ©solution par algorithme glouton : construction progressive de la solution
+// Résolution par algorithme glouton : construction progressive de la solution
 public abstract class AlgorithmeGlouton extends Algorithme {
     @Override
     public final void Resoudre(IProbleme pb, IHM ihm) {

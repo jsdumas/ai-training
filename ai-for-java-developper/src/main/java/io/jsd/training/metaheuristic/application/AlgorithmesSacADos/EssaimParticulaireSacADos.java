@@ -7,7 +7,7 @@ import io.jsd.training.metaheuristic.application.ProblemeSacADos;
 import io.jsd.training.metaheuristic.application.SolutionSacADos;
 import java.util.ArrayList;
 
-// Essaim particulaire pour le problÃ¨me du sac Ã  dos
+// Essaim particulaire pour le problème du sac à  dos
 public class EssaimParticulaireSacADos extends EssaimParticulaire {
     protected int nbIterations = 0;
     private final static int NB_MAX_ITERATIONS = 200;
@@ -17,13 +17,13 @@ public class EssaimParticulaireSacADos extends EssaimParticulaire {
         for (ISolution sol : solutions) {
             SolutionSacADos solution = (SolutionSacADos) sol;
             if (!solution.equals(meilleureSolution)) {
-                // Ajout d'un Ã©lÃ©ment de la meilleure jusqu'Ã  prÃ©sent
+                // Ajout d'un élément de la meilleure jusqu'à  présent
                 int index = ProblemeSacADos.generateur.nextInt(((SolutionSacADos)meilleureSolution).contenu.size());
                 Boite b = ((SolutionSacADos)meilleureSolution).contenu.get(index);
                 if (!solution.contenu.contains(b)) {
                     solution.contenu.add(b);
                 }
-                // Ajout d'un Ã©lÃ©ment de la meilleure actuelle
+                // Ajout d'un élément de la meilleure actuelle
                 index = ProblemeSacADos.generateur.nextInt(((SolutionSacADos)meilleureActuelle).contenu.size());
                 b = ((SolutionSacADos)meilleureActuelle).contenu.get(index);
                 if (!solution.contenu.contains(b)) {
@@ -34,7 +34,7 @@ public class EssaimParticulaireSacADos extends EssaimParticulaire {
                     index = ProblemeSacADos.generateur.nextInt(solution.contenu.size());
                     solution.contenu.remove(index);
                 }
-                // Enfin, on complÃ¨te
+                // Enfin, on complète
                 double espaceDispo = ((ProblemeSacADos)probleme).poidsMax - solution.getPoids();
                 ArrayList<Boite> boitesPossibles = ((ProblemeSacADos)probleme).Boites();
                 boitesPossibles.removeAll(solution.contenu);

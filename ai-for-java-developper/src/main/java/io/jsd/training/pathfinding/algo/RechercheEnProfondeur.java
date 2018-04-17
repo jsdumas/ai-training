@@ -11,10 +11,10 @@ public class RechercheEnProfondeur extends Algorithme {
         super(_graphe,_ihm);
     }
     
-    // MÃ©thode de rÃ©solution
+    // Méthode de résolution
     @Override
     protected void Run() {
-        // CrÃ©ation de la liste des noeuds non visitÃ©s et de la pile
+        // Création de la liste des noeuds non visités et de la pile
         ArrayList<Noeud> noeudsNonVisites = graphe.ListeNoeuds();
         Stack<Noeud> noeudsAVisiter = new Stack();
         noeudsAVisiter.push(graphe.NoeudDepart());
@@ -32,7 +32,7 @@ public class RechercheEnProfondeur extends Algorithme {
                 sortieTrouvee = true;
             }
             else {
-                // On ajoute les voisins non encore visitÃ©s
+                // On ajoute les voisins non encore visités
                 for (Noeud n : graphe.ListeNoeudsSortants(noeudCourant)) {
                     if (noeudsNonVisites.contains(n)) {
                         noeudsNonVisites.remove(n);

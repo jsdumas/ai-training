@@ -10,7 +10,7 @@ public class Dijkstra extends Algorithme {
         super(_graphe, _ihm);
     }
     
-    // MÃ©thode principale
+    // Méthode principale
     @Override
     protected void Run() {
         // Initialisation
@@ -28,7 +28,7 @@ public class Dijkstra extends Algorithme {
             }
             
             if (noeudCourant.equals(graphe.NoeudSortie())) {
-                // On a trouvÃ© la sortie
+                // On a trouvé la sortie
                 sortieTrouvee = true;
             }
             else {

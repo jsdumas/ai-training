@@ -1,6 +1,6 @@
 package io.jsd.training.pathfinding.algo;
 
-// Classe reprÃ©sentant les noeuds dans un graphe
+// Classe représentant les noeuds dans un graphe
 public abstract class Noeud {
     public Noeud precurseur = null;
     public double distanceDuDepart = Double.POSITIVE_INFINITY;

@@ -15,12 +15,12 @@ public class Application implements IHM {
     }
     
     protected void Lancer() {
-        // ProblÃ¨me du XOR
+        // Problème du XOR
         /*String[] contenu = lireFichier("xor.txt", true);
         Systeme systeme = new Systeme(2, 2, 1, contenu, 1.0, this);
         systeme.Lancer();*/
         
-        // ProblÃ¨me Abalone
+        // Problème Abalone
         String[] contenu = lireFichier("abalone_norm.txt", false);
         Systeme systeme = new Systeme(10, 4, 1, contenu, 0.8, this);
         systeme.setTauxApprentissage(0.6);

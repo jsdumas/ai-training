@@ -1,6 +1,6 @@
 package io.jsd.training.geneticalgorithm.algo;
 
-// ReprÃ©sente un gÃ¨ne dans un gÃ©nome
+// Représente un gène dans un génome
 public interface IGene {
     void Muter();
 }

@@ -6,7 +6,7 @@ import io.jsd.training.pathfinding.algo.Arc;
 import io.jsd.training.pathfinding.algo.Graphe;
 import io.jsd.training.pathfinding.algo.Noeud;
 
-// Classe reprÃ©sentant la carte Ã  parcourir, hÃ©ritant de Graphe
+// Classe représentant la carte à  parcourir, héritant de Graphe
 public class Carte implements Graphe {
 
     // Attributs
@@ -20,7 +20,7 @@ public class Carte implements Graphe {
     
     // Constructeur
     public Carte(String _carte, int _ligneDepart, int _colonneDepart, int _ligneArrivee, int _colonneArrivee) {
-        // CrÃ©ation du tableau de tuiles
+        // Création du tableau de tuiles
         String[] lignes = _carte.split("\n");
         nbLignes = lignes.length;
         nbColonnes = lignes[0].length();
@@ -35,7 +35,7 @@ public class Carte implements Graphe {
             }
         }
         
-        // DÃ©part et arrivÃ©e
+        // Départ et arrivée
         noeudDepart = tuiles[_ligneDepart][_colonneDepart];
         noeudDepart.distanceDuDepart = noeudDepart.Cout();
         noeudArrivee = tuiles[_ligneArrivee][_colonneArrivee];
@@ -203,7 +203,7 @@ public class Carte implements Graphe {
         listeNoeuds = null;
         listeArcs = null;
         
-        // Effacer les distances et prÃ©curseurs
+        // Effacer les distances et précurseurs
         for (int ligne = 0; ligne < nbLignes; ligne++) {
             for (int colonne = 0; colonne < nbColonnes; colonne++) {
                 tuiles[ligne][colonne].distanceDuDepart = Double.POSITIVE_INFINITY;

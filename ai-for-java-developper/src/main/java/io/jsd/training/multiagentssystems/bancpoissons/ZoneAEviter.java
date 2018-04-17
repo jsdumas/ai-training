@@ -1,6 +1,6 @@
 package io.jsd.training.multiagentssystems.bancpoissons;
 
-// Une zone Ã  Ã©viter pour les poissons. Celle-ci disparait automatiquement au bout d'un moment
+// Une zone à  éviter pour les poissons. Celle-ci disparait automatiquement au bout d'un moment
 public class ZoneAEviter extends Objet {
     protected double rayon;
     protected int tempsRestant = 500;

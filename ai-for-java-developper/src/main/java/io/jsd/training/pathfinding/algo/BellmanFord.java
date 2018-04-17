@@ -9,7 +9,7 @@ public class BellmanFord extends Algorithme {
         super(_graphe, _ihm);
     }
 
-    // MÃ©thode de rÃ©solution
+    // Méthode de résolution
     @Override
     protected void Run() {
         // Initialisation
@@ -23,7 +23,7 @@ public class BellmanFord extends Algorithme {
             distanceChangee = false;
             for (Arc arc : listeArcs) {
                 if (arc.source.distanceDuDepart + arc.cout < arc.cible.distanceDuDepart) {
-                    // On a trouvÃ© un chemin plus court
+                    // On a trouvé un chemin plus court
                     arc.cible.distanceDuDepart = arc.source.distanceDuDepart + arc.cout;
                     arc.cible.precurseur = arc.source;
                     distanceChangee = true;
@@ -32,11 +32,11 @@ public class BellmanFord extends Algorithme {
             i++;
         }
         
-        // Test si boule nÃ©gative
+        // Test si boule négative
         for (Arc arc : listeArcs) {
             if (arc.source.distanceDuDepart + arc.cout < arc.cible.distanceDuDepart) {
                 // On ne pourra pas trouver un chemin le plus court
-                System.err.println("Boucle nÃ©gative - pas de chemin le plus court");
+                System.err.println("Boucle négative - pas de chemin le plus court");
             }
         }
     }

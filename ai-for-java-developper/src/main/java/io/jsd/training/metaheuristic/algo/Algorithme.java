@@ -1,6 +1,6 @@
 package io.jsd.training.metaheuristic.algo;
 
-// Algorithme gÃ©nÃ©rique
+// Algorithme générique
 public abstract class Algorithme {
     protected IProbleme probleme;
     protected IHM ihm;

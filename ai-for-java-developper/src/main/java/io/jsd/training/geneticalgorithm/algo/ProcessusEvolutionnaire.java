@@ -2,7 +2,7 @@ package io.jsd.training.geneticalgorithm.algo;
 
 import java.util.ArrayList;
 
-// SystÃ¨me gÃ©nÃ©rique gÃ©rant le processus Ã©volutionnaire
+// Système générique gérant le processus évolutionnaire
 public class ProcessusEvolutionnaire {
     // Attributs
     protected ArrayList<Individu> population;
@@ -28,7 +28,7 @@ public class ProcessusEvolutionnaire {
         population = nelleGeneration;
     }
     
-    // SÃ©lection : tournoi
+    // Sélection : tournoi
     private Individu Selection() {
         // Choix des individus
         int index1 = Parametres.random.nextInt(Parametres.nbIndividus);
@@ -58,7 +58,7 @@ public class ProcessusEvolutionnaire {
             ihm.AfficherMeilleurIndividu(meilleurInd, nbGeneration);
             meilleureFitness = meilleurInd.fitness;
             
-            // SÃ©lection et reproduction avec Ã©litisme
+            // Sélection et reproduction avec élitisme
             ArrayList<Individu> nellePopulation = new ArrayList();
             nellePopulation.add(meilleurInd);
             for (int i = 0; i < Parametres.nbIndividus - 1; i++) {

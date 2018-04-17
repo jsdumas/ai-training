@@ -9,7 +9,7 @@ public abstract class Individu {
     protected double fitness;
     protected ArrayList<IGene> genome;
     
-    // MÃ©thodes
+    // Méthodes
     public double getFitness() {
         return fitness;
     }

@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Observable;
 import java.util.Random;
 
-// Environnement, contenant les dÃ©chets et les agents
+// Environnement, contenant les déchets et les agents
 public class Environnement extends Observable {
     // Gestion du singleton
     private static Environnement instance;
@@ -25,7 +25,7 @@ public class Environnement extends Observable {
     protected ArrayList<AgentTri> agents;
     protected int nbIterations = 0;
     
-    // MÃ©thodes
+    // Méthodes
     private Environnement() {
         dechets = new ArrayList();
         agents = new ArrayList();

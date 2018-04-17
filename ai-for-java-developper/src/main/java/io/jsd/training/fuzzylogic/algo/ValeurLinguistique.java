@@ -1,8 +1,8 @@
 package io.jsd.training.fuzzylogic.algo;
 
-// Classe reprÃ©sentant une valeur linguistique comportant un nom et un ensemble flou
+// Classe représentant une valeur linguistique comportant un nom et un ensemble flou
 public class ValeurLinguistique {
-    // Ensemble flou liÃ©
+    // Ensemble flou lié
     protected EnsembleFlou ensembleFlou;
 
     // Nom de la valeur

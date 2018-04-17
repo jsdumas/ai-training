@@ -6,7 +6,7 @@ import io.jsd.training.metaheuristic.algo.IProbleme;
 import io.jsd.training.metaheuristic.algo.ISolution;
 import java.util.ArrayList;
 
-// Algorithme du recuit : on va faire des bonds de plus en plus petits avec la tempÃ©rature qui baisse
+// Algorithme du recuit : on va faire des bonds de plus en plus petits avec la température qui baisse
 public abstract class RecuitSimule extends Algorithme {
     protected ISolution solutionCourante;
     protected ISolution meilleureSolution;

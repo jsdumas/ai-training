@@ -7,7 +7,7 @@ import io.jsd.training.metaheuristic.application.SolutionSacADos;
 import java.util.ArrayList;
 import java.util.Collections;
 
-// Algorithme glouton pour le problÃ¨me du sac Ã  dos
+// Algorithme glouton pour le problème du sac à  dos
 public class AlgorithmeGloutonSacADos extends AlgorithmeGlouton {
     SolutionSacADos solution;
     

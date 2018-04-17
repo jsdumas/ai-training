@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 // Classe permettant de créer les faits, quel que soit leur type
 class FaitFactory {
+	
     // Créé un nouveau fait en remplissant la valeur donnée par l'utilisateur
     static IFait Fait(IFait f, MoteurInferences m) {
         try {
@@ -27,7 +28,7 @@ class FaitFactory {
         }
     }
   
-    // Créé un nouveau fait Ã  partir de sa chaine
+    // Créé un nouveau fait à  partir de sa chaine
     static IFait Fait(String faitStr) {
         faitStr = faitStr.trim();
         if (faitStr.contains("=")) {
@@ -50,10 +51,10 @@ class FaitFactory {
             if (faitStr.startsWith("!")) {
                 // C'est négatif
                 valeur = false;
-                // On enlÃ¨ve le "!"
+                // On enlève le "!"
                 faitStr = faitStr.substring(1).trim();
             }
-            // Split, aprÃ¨s avoir enlevé le premier délimiteur si besoin : '('
+            // Split, après avoir enlevé le premier délimiteur si besoin : '('
             faitStr = faitStr.replaceFirst("^" + "\\(", "");
             String[] nomQuestion = faitStr.split("[()]");
             String question = null;

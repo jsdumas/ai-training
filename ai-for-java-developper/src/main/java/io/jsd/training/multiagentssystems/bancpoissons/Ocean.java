@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Random;
 
-// L'ocÃ©an dans lequel nagent les poissons
+// L'océan dans lequel nagent les poissons
 public class Ocean extends Observable {
     // Attributs
     protected Poisson[] poissons;
@@ -13,7 +13,7 @@ public class Ocean extends Observable {
     protected double largeur;
     protected double hauteur;
     
-    // MÃ©thodes
+    // Méthodes
     public Ocean(int _nbPoissons, double _largeur, double _hauteur) {
         largeur = _largeur;
         hauteur = _hauteur;
