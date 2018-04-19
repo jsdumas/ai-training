@@ -77,10 +77,10 @@ public class Application implements IHM {
 	// Affiche la liste des faits de niveau >0 et par ordre décroissant de niveau
 	public void afficherFaits(ArrayList<IFait> faits) {
 		String res = "Solution(s) trouvée(s) : \n";
-		Collections.sort(faits, (IFait f1, IFait f2) -> {
-			if (f1.getNiveau() == f2.getNiveau()) {
+		Collections.sort(faits, (IFait fait1, IFait fait2) -> {
+			if (fait1.getNiveau() == fait2.getNiveau()) {
 				return 0;
-			} else if (f1.getNiveau() > f2.getNiveau()) {
+			} else if (fait1.getNiveau() > fait2.getNiveau()) {
 				return -1;
 			} else {
 				return 1;

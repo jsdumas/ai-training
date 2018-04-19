@@ -3,23 +3,22 @@ package io.jsd.training.expertsystem.algo;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-// Classe permettant de créer les faits, quel que soit leur type
 class FaitFactory {
 	
     // Créé un nouveau fait en remplissant la valeur donnée par l'utilisateur
-    static IFait Fait(IFait f, MoteurInferences m) {
+    static IFait fait(IFait fait, MoteurInferences moteur) {
         try {
             IFait nouveauFait;
-            Class classe = f.getClass();
-            if (classe.equals(Class.forName("systemeexpert.FaitEntier"))) {
+            Class classe = fait.getClass();
+            if (classe.equals(Class.forName("io.jsd.training.expertsystem.algo.FaitEntier"))) {
                 // Création d'un fait entier
-                int valeur = m.DemanderValeurEntiere(f.getQuestion());
-                nouveauFait = new FaitEntier(f.getNom(), valeur, null, 0);
+                int valeur = moteur.DemanderValeurEntiere(fait.getQuestion());
+                nouveauFait = new FaitEntier(fait.getNom(), valeur, null, 0);
             }
             else {
                 // C'est un fait booléen
-                boolean valeurB = m.DemanderValeurBooleenne(f.getQuestion());
-                nouveauFait = new FaitBooleen(f.getNom(), valeurB, null, 0);
+                boolean valeurB = moteur.DemanderValeurBooleenne(fait.getQuestion());
+                nouveauFait = new FaitBooleen(fait.getNom(), valeurB, null, 0);
             }
             return nouveauFait;
         } catch (ClassNotFoundException ex) {
@@ -29,7 +28,7 @@ class FaitFactory {
     }
   
     // Créé un nouveau fait à  partir de sa chaine
-    static IFait Fait(String faitStr) {
+    static IFait fait(String faitStr) {
         faitStr = faitStr.trim();
         if (faitStr.contains("=")) {
             // Il y a le symbole "=", c'est donc un fait entier

@@ -2,7 +2,7 @@ package io.jsd.training.expertsystem.algo;
 
 import java.util.ArrayList;
 
-// Moteur d'inférences du système expert, à  chaà®nage avant
+// Moteur d'inférences du système expert, à  chaînage avant
 public class MoteurInferences {
 	
     private BaseDeFaits baseDeFaits;
@@ -10,7 +10,6 @@ public class MoteurInferences {
     private IHM ihm;
     private int niveauMaxRegle;
     
-    // Constructeur
     public MoteurInferences(IHM ihm) {
         this.ihm = ihm;
         this.baseDeFaits = new BaseDeFaits();
@@ -38,7 +37,7 @@ public class MoteurInferences {
                 // Ce fait n'existe pas en base de faits
                 if (f.getQuestion() != null) {
                     // On le demande (et on l'ajoute)
-                    faitTrouve = FaitFactory.Fait(f, this);
+                    faitTrouve = FaitFactory.fait(f, this);
                     baseDeFaits.ajouterFait(faitTrouve);
                 }
                 else {
@@ -84,16 +83,16 @@ public class MoteurInferences {
         baseDeFaits.vider();
         
         // Tant qu'il existe des règles à  appliquer
-        Regle r = TrouverRegle(bdrLocale);
-        while(r!=null) {
+        Regle regle = TrouverRegle(bdrLocale);
+        while(regle!=null) {
             // Appliquer la règle
-            IFait nouveauFait = r.conclusion;
+            IFait nouveauFait = regle.getConclusion();
             nouveauFait.setNiveau(niveauMaxRegle + 1);
             baseDeFaits.ajouterFait(nouveauFait);
             // Enlever la règle des possibles
-            bdrLocale.Effacer(r);
+            bdrLocale.Effacer(regle);
             // Chercher la prochaine règle applicable
-            r = TrouverRegle(bdrLocale);
+            regle = TrouverRegle(bdrLocale);
         }
         
         // Affichage des résultats
@@ -117,13 +116,13 @@ public class MoteurInferences {
                 ArrayList<IFait> premisses = new ArrayList();
                 String[] premissesStr = premissesConclusion[0].split(" AND ");
                 for(String chaine : premissesStr) {
-                    IFait premisse = FaitFactory.Fait(chaine.trim());
+                    IFait premisse = FaitFactory.fait(chaine.trim());
                     premisses.add(premisse);
                 }
                 
                 // Lecture de la conclusion
                 String conclusionStr = premissesConclusion[1].trim();
-                IFait conclusion = FaitFactory.Fait(conclusionStr);
+                IFait conclusion = FaitFactory.fait(conclusionStr);
                 
                 // Création de la règle et ajout à  la base
                 baseDeRegles.AjouterRegle(new Regle(nom, premisses, conclusion));
